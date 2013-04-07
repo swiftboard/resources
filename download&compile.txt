@@ -1,0 +1,22 @@
+mkdir swiftboard
+
+mkdir lichee
+repo init -u https://github.com/swiftboard/lichee_manifest.git -m dev_3.0.xml
+repo sync
+
+cd ../
+mkdir android
+repo init -u https://github.com/swiftboard/manifest-1.git -m default.xml 
+repo sync
+
+
+cd lichee
+./build.sh -p sun4i_crane -k 3.0
+
+
+cd android
+source build/envsetup.sh
+lunch crane_evb
+extract-bsp
+make -j4
+pack
