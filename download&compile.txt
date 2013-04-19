@@ -1,7 +1,7 @@
 mkdir swiftboard
 
 mkdir lichee
-repo init -u https://github.com/swiftboard/lichee_manifest.git -m dev_3.0.xml
+repo init -u https://github.com/swiftboard/lichee_manifest.git -m dev_v3.0.xml
 repo sync
 
 cd ../
